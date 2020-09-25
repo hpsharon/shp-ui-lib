@@ -1,5 +1,5 @@
 {
-  "name": "react-modern-library-boilerplate-example",
+  "name": "shp-ui-lib",
   "homepage": "https://transitive-bullshit.github.io/react-modern-library-boilerplate",
   "version": "0.0.0",
   "private": true,
@@ -8,7 +8,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-modern-library-boilerplate": "link:..",
+    "shp-ui-lib": "file:..",
     "react-scripts": "^1.1.4"
   },
   "scripts": {
