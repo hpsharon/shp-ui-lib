@@ -4,7 +4,7 @@
   "description": "",
   "author": "Sharon Haim-Pour",
   "license": "MIT",
-  "repository": "transitive-bullshit/react-modern-library-boilerplate",
+  "repository": "https://github.com/hpsharon/shp-ui-lib",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "engines": {

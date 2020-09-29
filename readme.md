@@ -1,49 +1,57 @@
-# react-modern-library-boilerplate
+# shp-ui-lib
 
-> Boilerplate and CLI [create-react-library](https://github.com/transitive-bullshit/create-react-library) for publishing modern React modules with Rollup and example usage via create-react-app.
+> A simple and useful UI component library using typescript, react hooks, styled components 
 
-[![NPM](https://img.shields.io/npm/v/react-modern-library-boilerplate.svg)](https://www.npmjs.com/package/react-modern-library-boilerplate) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/react-modern-library-boilerplate.svg)](https://www.npmjs.com/package/shp-ui-lib) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Intro
 
-*Note*: Modern means modern as of March, 2018.. I'm sure everything will change in a month... :joy: :joy:
+A simple and basic UI components library
 
-We strongly recommend that you use the accompanying CLI [create-react-library](https://github.com/transitive-bullshit/create-react-library) to create new modules based off of this boilerplate.
+## Featured Components
 
-**The purpose of this boilerplate is to make publishing your own React components as simple as possible.**
+- Button
 
-## Features
+## Installation
 
-- Easy-to-use CLI [create-react-library](https://github.com/transitive-bullshit/create-react-library)
-- Transpiles all modern JS features
-- Bundles `cjs` and `es` module formats
-- [create-react-app](https://github.com/facebookincubator/create-react-app) for example usage and local dev
-- [Rollup](https://rollupjs.org/) for build process
-- [Babel](https://babeljs.io/) for transpilation
-- [Jest](https://facebook.github.io/jest/) for testing
-- Supports complicated peer-dependencies
-- Supports CSS modules
-- Sourcemap creation
-- Thorough documentation :heart_eyes:
+Run from shell `npm install shp-ui-lib`
 
-## Manual Setup
+## Documentation
+###### Button
+Property    | Description               | Default |     Required
+--------    | -----------               | ------- |     --------
+`text`      | Text to show on button    | Empty string  | `false`
+`style`     | Button style. One of the following: `primary`, `secondary`, `success`, `danger`, `warning`, `info`, `light` | `primary` | `false`
+`onClick`   |   Function to execute on button click | | `true`
 
-If you'd prefer to setup a new module manually, check out the introductory [blog post](https://hackernoon.com/publishing-baller-react-modules-2b039d84bce7) and the old [manual guide](https://github.com/transitive-bullshit/react-modern-library-boilerplate/blob/master/manual.md).
+##Example
 
-## Examples
+```javascript
+import { useCallback } from 'react'
+import {Button} from 'shp-ui-lib'
 
-Here is an example react module created from this boilerplate: [react-background-slideshow](https://github.com/transitive-bullshit/react-background-slideshow), a sexy tiled background slideshow for React. It comes with an example create-react-app hosted on github pages.
+function App() {
+  const onClickCallback = useCallback(() => {
+    console.log('Clicked')
+  }, [])
 
-### Multiple Named Exports
+  return (
+    <div>
+      <Button type='primary' text={'Primary'} onClick={onClickCallback} /> 
+      <Button type='secondary' text={'Secondary'} onClick={onClickCallback} />
+      <Button type='success' text={'Success'} onClick={onClickCallback} />
+      <Button type='danger' text={'Danger'} onClick={onClickCallback} />
+      <Button type='warning' text={'Warning'} onClick={onClickCallback} />
+      <Button type='info' text={'Info'} onClick={onClickCallback} />
+      <Button type='light' text={'Light'} onClick={onClickCallback} />
+    </div>
+  )
+}
 
-Here is a [branch](https://github.com/transitive-bullshit/react-modern-library-boilerplate/tree/feature/multiple-exports) which demonstrates how to create a module with multiple named exports. The module in this branch exports two components, `Foo` and `Bar`, and shows how to use them from the example app.
+export default App
 
-### Material-UI
-
-Here is a [branch](https://github.com/transitive-bullshit/react-modern-library-boilerplate/tree/feature/material-ui) which demonstrates how to create a module that makes use of a relatively complicated peer dependency, [material-ui](https://github.com/mui-org/material-ui). It shows the power of [rollup-plugin-peer-deps-external](https://www.npmjs.com/package/rollup-plugin-peer-deps-external) which makes it a breeze to create reusable modules that include complicated material-ui subcomponents without having them bundled as a part of your module.
+```   
 
 ## License
 
-MIT © [Travis Fischer](https://github.com/transitive-bullshit)
-
-Support my OSS work by <a href="https://twitter.com/transitive_bs">following me on twitter <img src="https://storage.googleapis.com/saasify-assets/twitter-logo.svg" alt="twitter" height="24px" align="center"></a>
+MIT © [Sharon Haim-Pour](linkedin.com/in/hpsharon/)
