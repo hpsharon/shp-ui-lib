@@ -21,6 +21,8 @@ export default {
       sourcemap: true
     }
   ],
+  external: ['styled-components'],
+  globals: { 'styled-components': 'styled' },
   plugins: [
     external(),
     postcss({
@@ -32,6 +34,13 @@ export default {
       plugins: [ 'external-helpers' ]
     }),
     resolve(),
-    commonjs()
+    commonjs({
+      namedExports: {
+        // left-hand side can be an absolute path, a path
+        // relative to the current directory, or the name
+        // of a module in node_modules
+        'react-is': [ 'typeOf', 'isElement', 'isValidElementType' ]
+      }
+    })
   ]
 }

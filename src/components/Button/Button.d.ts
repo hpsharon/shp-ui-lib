@@ -1,10 +1,9 @@
-/**
- * @class Button
- */
 import { FunctionComponent } from 'react';
-import './Buton.scss';
-declare type ButtonProps = {
+import PropTypes from 'prop-types';
+interface ButtonProps {
     text: string;
-};
+    type: string;
+    onClick: PropTypes.func;
+}
 export declare const Button: FunctionComponent<ButtonProps>;
 export {};
