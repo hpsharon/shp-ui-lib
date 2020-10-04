@@ -31,9 +31,9 @@ import { useCallback } from 'react'
 import {Button} from 'shp-ui-lib'
 
 function App() {
-  const onClickCallback = useCallback(() => {
+  const onClickCallback = () => {
     console.log('Clicked')
-  }, [])
+  }
 
   return (
     <div>
@@ -54,4 +54,4 @@ export default App
 
 ## License
 
-MIT © [Sharon Haim-Pour](linkedin.com/in/hpsharon/)
+MIT © Sharon Haim-Pour
